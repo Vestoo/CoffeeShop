@@ -16,5 +16,18 @@ namespace CoffeeShop.Controllers
                 return entities.Tables.ToList();
             }
         }
+
+        public void CreateSort(Table table)
+        {
+            using (CoffeeDbEntities cf = new CoffeeDbEntities())
+            {
+                var lastSort = cf.Tables.ToList().LastOrDefault();
+                if (lastSort == null)
+                {
+                    lastSort = new Table();
+                    lastSort.Id = 0;
+                }
+            }
+        }
     }
 }

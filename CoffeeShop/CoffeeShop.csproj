@@ -123,6 +123,8 @@
       <DependentUpon>CoffeeShopDbModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CoffeeShop.Models.Table.datasource" />
+    <None Include="Properties\DataSources\CoffeeShop.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

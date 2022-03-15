@@ -24,5 +24,10 @@ namespace CoffeeShop.Views
         {
             dgvCoffeeShop.DataSource = coffeeShopController.GetAll();
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
