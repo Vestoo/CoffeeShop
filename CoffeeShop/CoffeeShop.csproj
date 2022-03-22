@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,12 +48,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -77,23 +71,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\CoffeeShopDbModel.Context.cs">
+    <Compile Include="Models\CoffeeShopDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeShopDbModel.Context.tt</DependentUpon>
+      <DependentUpon>CoffeeShopDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CoffeeShopDbModel.cs">
+    <Compile Include="Models\CoffeeShopDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeShopDbModel.tt</DependentUpon>
+      <DependentUpon>CoffeeShopDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CoffeeShopDbModel.Designer.cs">
+    <Compile Include="Models\CoffeeShopDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeShopDbModel.edmx</DependentUpon>
+      <DependentUpon>CoffeeShopDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Table.cs">
-      <DependentUpon>CoffeeShopDbModel.tt</DependentUpon>
+      <DependentUpon>CoffeeShopDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,12 +109,12 @@
     <EmbeddedResource Include="Views\CoffeShopView.resx">
       <DependentUpon>CoffeShopView.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\CoffeeShopDbModel.edmx">
+    <EntityDeploy Include="Models\CoffeeShopDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CoffeeShopDbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>CoffeeShopDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\CoffeeShopDbModel.edmx.diagram">
-      <DependentUpon>CoffeeShopDbModel.edmx</DependentUpon>
+    <None Include="Models\CoffeeShopDBModel.edmx.diagram">
+      <DependentUpon>CoffeeShopDBModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CoffeeShop.Models.Table.datasource" />
@@ -139,22 +133,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CoffeeDb.mdf">
+    <Content Include="CoffeeShopBD.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CoffeeDb_log.ldf">
+    <Content Include="CoffeeShopBD_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CoffeeDb.mdf</DependentUpon>
+      <DependentUpon>CoffeeShopBD.mdf</DependentUpon>
     </Content>
-    <Content Include="Models\CoffeeShopDbModel.Context.tt">
+    <Content Include="Models\CoffeeShopDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CoffeeShopDbModel.Context.cs</LastGenOutput>
-      <DependentUpon>CoffeeShopDbModel.edmx</DependentUpon>
+      <DependentUpon>CoffeeShopDBModel.edmx</DependentUpon>
+      <LastGenOutput>CoffeeShopDBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CoffeeShopDbModel.tt">
+    <Content Include="Models\CoffeeShopDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CoffeeShopDbModel.edmx</DependentUpon>
-      <LastGenOutput>CoffeeShopDbModel.cs</LastGenOutput>
+      <DependentUpon>CoffeeShopDBModel.edmx</DependentUpon>
+      <LastGenOutput>CoffeeShopDBModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup />

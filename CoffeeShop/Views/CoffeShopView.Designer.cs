@@ -30,39 +30,20 @@ namespace CoffeeShop.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvCoffeeShop = new System.Windows.Forms.DataGridView();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnPrice = new System.Windows.Forms.Button();
             this.btnQuantity = new System.Windows.Forms.Button();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sortNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sortPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sortQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCreate = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblCreate = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCoffeeShop)).BeginInit();
+            this.dgvCoffees = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCoffees)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvCoffeeShop
-            // 
-            this.dgvCoffeeShop.AutoGenerateColumns = false;
-            this.dgvCoffeeShop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCoffeeShop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.sortNameDataGridViewTextBoxColumn,
-            this.sortPriceDataGridViewTextBoxColumn,
-            this.sortQuantityDataGridViewTextBoxColumn});
-            this.dgvCoffeeShop.DataSource = this.tableBindingSource;
-            this.dgvCoffeeShop.Location = new System.Drawing.Point(49, 49);
-            this.dgvCoffeeShop.Name = "dgvCoffeeShop";
-            this.dgvCoffeeShop.Size = new System.Drawing.Size(406, 150);
-            this.dgvCoffeeShop.TabIndex = 0;
             // 
             // btnCreate
             // 
@@ -91,35 +72,6 @@ namespace CoffeeShop.Views
             this.btnQuantity.TabIndex = 3;
             this.btnQuantity.Text = "Update quantity";
             this.btnQuantity.UseVisualStyleBackColor = true;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataSource = typeof(CoffeeShop.Models.Table);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sortNameDataGridViewTextBoxColumn
-            // 
-            this.sortNameDataGridViewTextBoxColumn.DataPropertyName = "SortName";
-            this.sortNameDataGridViewTextBoxColumn.HeaderText = "SortName";
-            this.sortNameDataGridViewTextBoxColumn.Name = "sortNameDataGridViewTextBoxColumn";
-            // 
-            // sortPriceDataGridViewTextBoxColumn
-            // 
-            this.sortPriceDataGridViewTextBoxColumn.DataPropertyName = "SortPrice";
-            this.sortPriceDataGridViewTextBoxColumn.HeaderText = "SortPrice";
-            this.sortPriceDataGridViewTextBoxColumn.Name = "sortPriceDataGridViewTextBoxColumn";
-            // 
-            // sortQuantityDataGridViewTextBoxColumn
-            // 
-            this.sortQuantityDataGridViewTextBoxColumn.DataPropertyName = "SortQuantity";
-            this.sortQuantityDataGridViewTextBoxColumn.HeaderText = "SortQuantity";
-            this.sortQuantityDataGridViewTextBoxColumn.Name = "sortQuantityDataGridViewTextBoxColumn";
             // 
             // txtCreate
             // 
@@ -169,11 +121,20 @@ namespace CoffeeShop.Views
             this.lblQuantity.TabIndex = 9;
             this.lblQuantity.Text = "Update quantity";
             // 
+            // dgvCoffees
+            // 
+            this.dgvCoffees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCoffees.Location = new System.Drawing.Point(72, 49);
+            this.dgvCoffees.Name = "dgvCoffees";
+            this.dgvCoffees.Size = new System.Drawing.Size(356, 150);
+            this.dgvCoffees.TabIndex = 10;
+            // 
             // CoffeShopView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvCoffees);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblCreate);
@@ -183,20 +144,17 @@ namespace CoffeeShop.Views
             this.Controls.Add(this.btnQuantity);
             this.Controls.Add(this.btnPrice);
             this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.dgvCoffeeShop);
             this.Name = "CoffeShopView";
             this.Text = "CoffeShopForm";
             this.Load += new System.EventHandler(this.CoffeShopForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCoffeeShop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCoffees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvCoffeeShop;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnPrice;
         private System.Windows.Forms.Button btnQuantity;
@@ -211,5 +169,6 @@ namespace CoffeeShop.Views
         private System.Windows.Forms.Label lblCreate;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.DataGridView dgvCoffees;
     }
 }

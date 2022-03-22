@@ -15,8 +15,8 @@ namespace CoffeeShop.Models
     public partial class Table
     {
         public int Id { get; set; }
-        public string SortName { get; set; }
-        public int SortPrice { get; set; }
-        public int SortQuantity { get; set; }
+        public string SortType { get; set; }
+        public Nullable<int> SortPrice { get; set; }
+        public Nullable<int> SortQuantity { get; set; }
     }
 }

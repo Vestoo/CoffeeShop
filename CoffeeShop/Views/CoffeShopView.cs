@@ -22,7 +22,7 @@ namespace CoffeeShop.Views
     
         private void CoffeShopForm_Load(object sender, EventArgs e)
         {
-            dgvCoffeeShop.DataSource = coffeeShopController.GetAll();
+            dgvCoffees.DataSource = coffeeShopController.GetAll();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)

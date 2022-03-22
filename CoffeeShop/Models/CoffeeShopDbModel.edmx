@@ -4,34 +4,34 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CoffeeDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CoffeeShopBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Table">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="SortName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="SortPrice" Type="int" Nullable="false" />
-          <Property Name="SortQuantity" Type="int" Nullable="false" />
+          <Property Name="SortType" Type="nvarchar" MaxLength="50" />
+          <Property Name="SortPrice" Type="int" />
+          <Property Name="SortQuantity" Type="int" />
         </EntityType>
-        <EntityContainer Name="CoffeeDbModelStoreContainer">
+        <EntityContainer Name="CoffeeShopBDModelStoreContainer">
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CoffeeDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CoffeeShopBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Table">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="SortName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SortPrice" Type="Int32" Nullable="false" />
-          <Property Name="SortQuantity" Type="Int32" Nullable="false" />
+          <Property Name="SortType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SortPrice" Type="Int32" />
+          <Property Name="SortQuantity" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="CoffeeDbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CoffeeShopBDEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tables" EntityType="Self.Table" />
         </EntityContainer>
       </Schema>
@@ -39,12 +39,12 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CoffeeDbModelStoreContainer" CdmEntityContainer="CoffeeDbEntities">
+        <EntityContainerMapping StorageEntityContainer="CoffeeShopBDModelStoreContainer" CdmEntityContainer="CoffeeShopBDEntities">
           <EntitySetMapping Name="Tables">
-            <EntityTypeMapping TypeName="CoffeeDbModel.Table">
+            <EntityTypeMapping TypeName="CoffeeShopBDModel.Table">
               <MappingFragment StoreEntitySet="Table">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="SortName" ColumnName="SortName" />
+                <ScalarProperty Name="SortType" ColumnName="SortType" />
                 <ScalarProperty Name="SortPrice" ColumnName="SortPrice" />
                 <ScalarProperty Name="SortQuantity" ColumnName="SortQuantity" />
               </MappingFragment>

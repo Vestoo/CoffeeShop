@@ -11,15 +11,17 @@ namespace CoffeeShop.Controllers
     {
         public List<Table> GetAll()
         {
-            using (CoffeeDbEntities entities = new CoffeeDbEntities())
+            using (CoffeeShopBDEntities ex = new CoffeeShopBDEntities())
             {
-                return entities.Tables.ToList();
+                return ex.Tables.ToList();
             }
         }
 
+
+        //CREATE METHOD
         public void CreateSort(Table table)
         {
-            using (CoffeeDbEntities cf = new CoffeeDbEntities())
+            using (CoffeeShopBDEntities cf = new CoffeeShopBDEntities())
             {
                 var lastSort = cf.Tables.ToList().LastOrDefault();
                 if (lastSort == null)
