@@ -29,7 +29,12 @@ namespace CoffeeShop.Controllers
                     lastSort = new Table();
                     lastSort.Id = 0;
                 }
+
+                table.Id = lastSort.Id + 1;
+                cf.Tables.Add(table);
+                cf.SaveChanges();
             }
         }
+
     }
 }
