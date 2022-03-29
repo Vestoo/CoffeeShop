@@ -40,5 +40,26 @@ namespace CoffeeShop.Views
             coffeeShopController.CreateSort(table);
             RefreshTable();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvCoffees.CurrentRow;
+            int id = int.Parse(row.Cells["Id"].Value.ToString());
+            coffeeShopController.DeleteSort(id);
+            RefreshTable();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvCoffees.CurrentRow;
+            int id = int.Parse(row.Cells["Id"].Value.ToString());
+            Table table = new Table();
+            table.Id = id;
+            table.SortType = txtCreate.Text;
+            table.SortPrice = int.Parse(txtPrice.Text);
+            table.SortQuantity = int.Parse(txtQuantity.Text);
+            coffeeShopController.UpdateSort(id, table);
+            RefreshTable();
+        }
     }
 }
