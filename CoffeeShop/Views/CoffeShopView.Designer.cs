@@ -32,8 +32,8 @@ namespace CoffeeShop.Views
             this.components = new System.ComponentModel.Container();
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCreate = new System.Windows.Forms.Button();
-            this.btnPrice = new System.Windows.Forms.Button();
-            this.btnQuantity = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.txtCreate = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -55,23 +55,25 @@ namespace CoffeeShop.Views
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // btnPrice
+            // btnDelete
             // 
-            this.btnPrice.Location = new System.Drawing.Point(704, 133);
-            this.btnPrice.Name = "btnPrice";
-            this.btnPrice.Size = new System.Drawing.Size(67, 54);
-            this.btnPrice.TabIndex = 2;
-            this.btnPrice.Text = "Set a price";
-            this.btnPrice.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(704, 133);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(67, 54);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete sort";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnQuantity
+            // btnUpdate
             // 
-            this.btnQuantity.Location = new System.Drawing.Point(704, 219);
-            this.btnQuantity.Name = "btnQuantity";
-            this.btnQuantity.Size = new System.Drawing.Size(67, 54);
-            this.btnQuantity.TabIndex = 3;
-            this.btnQuantity.Text = "Update quantity";
-            this.btnQuantity.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(704, 219);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(67, 54);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update sort";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtCreate
             // 
@@ -141,8 +143,8 @@ namespace CoffeeShop.Views
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtCreate);
-            this.Controls.Add(this.btnQuantity);
-            this.Controls.Add(this.btnPrice);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreate);
             this.Name = "CoffeShopView";
             this.Text = "CoffeShopForm";
@@ -156,8 +158,8 @@ namespace CoffeeShop.Views
 
         #endregion
         private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Button btnPrice;
-        private System.Windows.Forms.Button btnQuantity;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sortNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sortPriceDataGridViewTextBoxColumn;

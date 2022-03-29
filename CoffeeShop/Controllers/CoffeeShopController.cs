@@ -36,5 +36,36 @@ namespace CoffeeShop.Controllers
             }
         }
 
+        //UPDATE METHOD
+        public void UpdateSort(int id, Table table)
+        {
+            using (CoffeeShopBDEntities ex = new CoffeeShopBDEntities())
+            {
+                var coffeUpdate = ex.Tables.Where(p => p.Id == id).FirstOrDefault();
+                if (coffeUpdate != null)
+                {
+                    coffeUpdate.Id = table.Id;
+                    coffeUpdate.SortPrice = table.SortPrice;
+                    coffeUpdate.SortQuantity = table.SortQuantity;
+                    coffeUpdate.SortType = table.SortType;
+                    ex.SaveChanges();
+                }
+            }
+        }
+
+        //DELETE METHOD
+        public void DeleteSort(int id)
+        {
+            using (CoffeeShopBDEntities ex = new CoffeeShopBDEntities())
+            {
+                var SortToDelete = ex.Tables.Where(p => p.Id == id).FirstOrDefault();
+                if (SortToDelete != null)
+                {
+                    ex.Tables.Remove(SortToDelete);
+                    ex.SaveChanges();
+                }
+            }
+
+        }
     }
 }
